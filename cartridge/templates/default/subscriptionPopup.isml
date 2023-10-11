@@ -1,0 +1,14 @@
+<div id="subscription-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; background-color: white; padding: 20px; border: 1px solid black;">
+    <h2>Subscribe to Our Newsletter</h2>
+    <form action="${URLUtils.url('Newsletter-Subscribe')}" method="post">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <input type="submit" value="Subscribe">
+    </form>
+</div>
+
+<script>
+    setTimeout(function() {
+        document.getElementById('subscription-popup').style.display = 'block';
+    }, 10000); // Show after 10 seconds
+</script>
