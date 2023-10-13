@@ -1,0 +1,301 @@
+/* ==========================================================================
+   Pop-up
+========================================================================== */
+p {
+    left:0;
+    text-decoration: underline;
+    margin-top:15px;
+}
+
+#evg-exit-intent-popup-email-capture {
+    position: relative;
+    z-index: 10000000;
+    display: none;
+
+
+}
+/* */
+#evg-exit-intent-popup-email-capture .evg-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .3;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+
+
+}
+/* l popup lkol */
+#evg-exit-intent-popup-email-capture .evg-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 310px;
+    padding-top: 0px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    background-color: #fff;
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateX(-50%) translateY(-50%);
+    border: 2px solid black;
+
+
+
+}
+/* l x */
+#evg-exit-intent-popup-email-capture .evg-btn-dismissal {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    padding: 0 ;
+    border: 0 solid transparent;
+    background-color: transparent;
+    font-size: 2.5rem;
+    font-weight: 100;
+    line-height: 1;
+    cursor: pointer;
+
+}
+
+
+/*
+#evg-exit-intent-popup-email-capture .evg-main-panel,
+#evg-exit-intent-popup-email-capture .evg-confirm-panel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+*/
+#evg-exit-intent-popup-email-capture .evg-confirm-header {
+    display: inline-block;
+    margin: 0 0 .5rem;
+}
+
+#evg-exit-intent-popup-email-capture .evg-confirm-subheader {
+    display: inline-block;
+    margin: 0 0 .5rem;
+}
+
+#evg-exit-intent-popup-email-capture .evg-opt-out-msg {
+    font-size: 1rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+/* ==========================================================================
+   Form
+========================================================================== */
+
+#evg-exit-intent-popup-email-capture .evg-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+
+
+    -webkit-box-align: left;
+    -ms-flex-align: left;
+    align-items: left;
+
+    width: 100%;
+    text-align: left;
+}
+
+/*entrez votre email */
+#evg-exit-intent-popup-email-capture .evg-email {
+    width: 100%;
+    border: 1px solid #ddd;
+    color: #59575c;
+}
+
+/* ==========================================================================
+   Headers
+========================================================================== */
+.evg-header {
+    margin-top: 0; /* Adjust as needed */
+    padding-top: 0; /* Adjust as needed */
+    margin-bottom: 0;
+}
+
+#evg-exit-intent-popup-email-capture .evg-h1,
+#evg-exit-intent-popup-email-capture .evg-h2 {
+    color: inherit;
+    font-weight: 500;
+    font-family: inherit;
+    line-height: 1.2;
+    left:0;
+    top:0;
+
+}
+
+#evg-exit-intent-popup-email-capture .evg-h1.evg-display-4 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    left:0;
+    top:0;
+
+
+}
+
+#evg-exit-intent-popup-email-capture .evg-h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+label[for="email"] {
+    margin-bottom: 0 !important; /* Add this line to decrease the distance to the next element */
+}
+input[type="email"] {
+    margin-top: 0 !important; /* Adjust this value as needed */
+}
+/* ==========================================================================
+   Call-To-Action Button
+========================================================================== */
+
+#evg-exit-intent-popup-email-capture .evg-btn {
+    display: inline-block;
+    vertical-align: middle;
+    padding: .5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 3rem;
+    color:#000;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    text-decoration: none;
+    transition:
+        color .15s ease-in-out,
+        background-color .15s ease-in-out,
+        border-color .15s ease-in-out,
+        box-shadow .15s ease-in-out;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* s'enregistrer*/
+#evg-exit-intent-popup-email-capture .evg-btn-primary {
+    border-color:#000;
+    color: #fff;
+    background-color:black;
+    transition: background-color .15s, color .15s;
+}
+
+#evg-exit-intent-popup-email-capture .evg-btn-lg {
+    font-size: 1rem;
+    width:100%;
+    text-align: center;
+
+}
+
+#evg-exit-intent-popup-email-capture .evg-cta {
+
+}
+
+/* ==========================================================================
+   Error Message
+========================================================================== */
+
+#evg-exit-intent-popup-email-capture .evg-error-msg {
+    color: #ff0000;
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   Style
+========================================================================== */
+
+#evg-exit-intent-popup-email-capture .evg-style-bg.evg-light-on-dark {
+    background-color: #343a40;
+}
+
+#evg-exit-intent-popup-email-capture .evg-style-bg.evg-dark-on-light {
+    background-color: #fff;
+}
+
+#evg-exit-intent-popup-email-capture .evg-style-text.evg-light-on-dark {
+    color: #fff;
+}
+
+#evg-exit-intent-popup-email-capture .evg-style-text.evg-dark-on-light {
+    color: #343a40;
+}
+
+/* ==========================================================================
+   Visibility
+========================================================================== */
+
+#evg-exit-intent-popup-email-capture .evg-hide {
+    display: none;
+
+}
+
+/* ==========================================================================
+   Media Queries
+========================================================================== */
+
+@media screen and (max-height: 500px) {
+    #evg-exit-intent-popup-email-capture .evg-popup {
+        height: 90vh;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #evg-exit-intent-popup-email-capture .evg-popup {
+        width: 90vw;
+    }
+
+    #evg-exit-intent-popup-email-capture .evg-h1.evg-display-4 {
+        font-size: 55rem;
+    }
+    
+
+    #evg-exit-intent-popup-email-capture .evg-h2 {
+        font-size: 1.2rem;
+    }
+
+    #evg-exit-intent-popup-email-capture .evg-btn-lg {
+        font-size: 1rem;
+    }
+
+    #evg-exit-intent-popup-email-capture .evg-error-msg,
+    #evg-exit-intent-popup-email-capture .evg-opt-out-msg {
+        font-size: .85rem;
+    }
+}

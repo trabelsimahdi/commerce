@@ -1,14 +1,64 @@
-<div id="subscription-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; background-color: white; padding: 20px; border: 1px solid black;">
-    <h2>Subscribe to Our Newsletter</h2>
-    <form action="${URLUtils.url('Newsletter-Subscribe')}" method="post">
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br>
-        <input type="submit" value="Subscribe">
-    </form>
+<link rel="stylesheet" href="${URLUtils.staticURL('/css/styles.css')}" />
+<div id="evg-exit-intent-popup-email-capture" role="dialog" aria-modal="true" aria-hidden="false">
+    <div class="evg-overlay" data-evg-dismissal></div>
+    <div class="evg-popup evg-style-bg evg-dark-on-light">
+        <div class="evg-main-panel">
+            <h1 class="evg-header evg-h1 evg-display-4 evg-style-text evg-dark-on-light">CELINE</h1>
+            <h2 class="evg-subheader evg-h2 evg-style-text evg-dark-on-light">Recevez toute l'actualité et les dernières nouveautés en vous inscrivant à notre newsletter</h2>
+            <form id="emailForm" class="evg-form" aria-label="Email Signup" role="form">
+                <input class="evg-email" name="email" type="email" required placeholder="Entrez votre email" novalidate
+                aria-label="Email" aria-required="true" tabindex="0">
+                <span class="evg-error-msg evg-hide">Enter a valid email address</span>
+                <p>Utilisation des données1</p>
+                <button id="submitButton" class="evg-cta evg-btn evg-btn-primary evg-btn-lg evg-dark-on-light-" tabindex="1" type="button" aria-label="Submit">S'ENREGISTRER</button>
+                <p>Termes et conditions</p>
+            </form>
+        </div>
+        <div class="evg-confirm-panel evg-hide">
+            <h1 class="evg-confirm-header evg-h1 evg-style-text evg-dark-on-light">THANKS!</h1>
+            <h2 class="evg-confirm-subheader evg-h2 evg-style-text evg-dark-on-light">You subscribed successfully.</h2>
+        </div>
+        <button class="evg-btn-dismissal evg-style-text evg-dark-on-light" data-evg-dismissal aria-label="Close Popup" tabindex="3">&times;</button>
+    </div>
 </div>
 
 <script>
+    // Get the elements
+    var popup = document.getElementById('evg-exit-intent-popup-email-capture');
+    var dismissalButton = document.querySelector('.evg-btn-dismissal');
+    var errorMsg = document.querySelector('.evg-error-msg');
+    var mainPanel = document.querySelector('.evg-main-panel');
+    var confirmPanel = document.querySelector('.evg-confirm-panel');
+    var form = document.getElementById('emailForm');
+    var submitButton = document.getElementById('submitButton');
+
+    // Handle click event on the dismissal button
+    dismissalButton.addEventListener('click', function() {
+        popup.style.display = 'none'; // Hide the popup
+    });
+
+    // Handle click event on the submit button
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        var emailInput = document.querySelector('.evg-email');
+        var emailRegex = RegExp(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/); // Provided email regex
+        if (emailRegex.test(emailInput.value)) {
+            mainPanel.classList.add('evg-hide'); // Hide main panel
+            confirmPanel.classList.remove('evg-hide'); // Show confirmation panel
+        } else {
+            errorMsg.classList.remove('evg-hide'); // Show error message
+        }
+    });
+
+    // Handle enter key press event on the form
+    form.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            submitButton.click(); // Trigger click event on the submit button
+        }
+    });
+
     setTimeout(function() {
-        document.getElementById('subscription-popup').style.display = 'block';
-    }, 10000); // Show after 10 seconds
+        document.getElementById('evg-exit-intent-popup-email-capture').style.display = 'block';
+    }, 5000); // Show after 1 second
 </script>
