@@ -3,13 +3,14 @@
     <div class="evg-overlay" data-evg-dismissal></div>
     <div class="evg-popup evg-style-bg evg-dark-on-light">
         <div class="evg-main-panel">
-            <h1 class="evg-header evg-h1 evg-display-4 evg-style-text evg-dark-on-light">CELINE</h1>
+            <h1 class="evg-header evg-h1 evg-display-4 evg-style-text evg-dark-on-light">CELINE!</h1>
             <h2 class="evg-subheader evg-h2 evg-style-text evg-dark-on-light">Recevez toute l'actualité et les dernières nouveautés en vous inscrivant à notre newsletter</h2>
             <form id="emailForm" class="evg-form" aria-label="Email Signup" role="form">
                 <input class="evg-email" name="email" type="email" required placeholder="Entrez votre email" novalidate
                 aria-label="Email" aria-required="true" tabindex="0">
                 <span class="evg-error-msg evg-hide">Enter a valid email address</span>
-                <p>Utilisation des données1</p>
+                <p>Utilisation des données</p>
+
                 <button id="submitButton" class="evg-cta evg-btn evg-btn-primary evg-btn-lg evg-dark-on-light-" tabindex="1" type="button" aria-label="Submit">S'ENREGISTRER</button>
                 <p>Termes et conditions</p>
             </form>
@@ -23,6 +24,7 @@
 </div>
 
 <script>
+
     // Get the elements
     var popup = document.getElementById('evg-exit-intent-popup-email-capture');
     var dismissalButton = document.querySelector('.evg-btn-dismissal');
@@ -35,6 +37,8 @@
     // Handle click event on the dismissal button
     dismissalButton.addEventListener('click', function() {
         popup.style.display = 'none'; // Hide the popup
+        localStorage.setItem('popupClosed', 'true');
+
     });
 
     // Handle click event on the submit button
@@ -45,6 +49,7 @@
         if (emailRegex.test(emailInput.value)) {
             mainPanel.classList.add('evg-hide'); // Hide main panel
             confirmPanel.classList.remove('evg-hide'); // Show confirmation panel
+            localStorage.setItem('subscribed', 'true');
         } else {
             errorMsg.classList.remove('evg-hide'); // Show error message
         }
@@ -57,8 +62,29 @@
             submitButton.click(); // Trigger click event on the submit button
         }
     });
+    if (!localStorage.getItem('popupClosed') && !localStorage.getItem('subscribed') && !window.location.href.includes('Login-Show')) {
+    var firstVisitTime = localStorage.getItem('firstVisitTime');
 
+    // If it's not set, set it to the current time
+    if (!firstVisitTime) {
+        firstVisitTime = new Date().getTime();
+        localStorage.setItem('firstVisitTime', firstVisitTime);
+    }
+
+    // Calculate elapsed time in seconds
+    var elapsedTime = (new Date().getTime() - firstVisitTime) / 1000;
+    console.log(elapsedTime);
+    if (20-elapsedTime>3){
     setTimeout(function() {
         document.getElementById('evg-exit-intent-popup-email-capture').style.display = 'block';
-    }, 5000); // Show after 1 second
+        }, (20-elapsedTime)*1000);
+    }
+    else
+    {
+        setTimeout(function() {
+                    document.getElementById('evg-exit-intent-popup-email-capture').style.display = 'block';
+        }, 3000);
+    }
+        }
+
 </script>

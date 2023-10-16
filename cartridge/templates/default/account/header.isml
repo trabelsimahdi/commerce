@@ -1,6 +1,7 @@
 <script src="//cdn.evgnet.com/beacon/talancorporate/mahdi2/scripts/evergage.min.js"></script>
 <isif condition="${pdict.name === null}">
     <isinclude template="subscriptionPopup"/>
+
     <div class="user hidden-md-down">
         <a href="${URLUtils.https('Login-Show')}" role="button" aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">
             <i class="fa fa-sign-in" aria-hidden="true"></i>
